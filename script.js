@@ -1,0 +1,6 @@
+function enterSite(){document.getElementById('welcome').classList.add('hide');setTimeout(()=>document.getElementById('letter').scrollIntoView({behavior:'smooth'}),350)}
+function reveal(el){el.classList.toggle('open')}
+function makeWish(){const t=document.getElementById('toast');t.classList.add('show');burstHearts();setTimeout(()=>t.classList.remove('show'),3200)}
+function burstHearts(){const box=document.querySelector('.hearts');for(let i=0;i<24;i++){const h=document.createElement('span');h.className='heart';h.textContent=['♥','♡','💗','✨'][Math.floor(Math.random()*4)];h.style.left=(10+Math.random()*80)+'%';h.style.fontSize=(12+Math.random()*24)+'px';h.style.animationDuration=(2+Math.random()*2)+'s';box.appendChild(h);setTimeout(()=>h.remove(),4500)}}
+setInterval(()=>{const box=document.querySelector('.hearts');if(!box)return;const h=document.createElement('span');h.className='heart';h.textContent=Math.random()>.25?'♡':'♥';h.style.left=Math.random()*100+'%';h.style.fontSize=(10+Math.random()*16)+'px';h.style.animationDuration=(7+Math.random()*6)+'s';box.appendChild(h);setTimeout(()=>h.remove(),14000)},900);
+const musicBtn=document.getElementById('musicBtn');if(musicBtn)musicBtn.addEventListener('click',()=>musicBtn.innerHTML='♡ <span>music coming soon</span>');
